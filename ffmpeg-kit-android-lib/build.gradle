@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
     if (project.android.hasProperty("namespace")) {
@@ -41,10 +42,24 @@ android {
         }
     }
 
-    publishing {
-        singleVariant('release') {
-            withJavadocJar()
-            withSourcesJar()
+//    publishing {
+//        singleVariant('release') {
+//            withJavadocJar()
+//            withSourcesJar()
+//        }
+//    }
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.better-bugs-sdk'
+            artifactId = 'ffmpeg-wrapper'
+            version = '0.0.1'
+
+//            afterEvaluate {
+//                from components.release
+//            }
         }
     }
 }
