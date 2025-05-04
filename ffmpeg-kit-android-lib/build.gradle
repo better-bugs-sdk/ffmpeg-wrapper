@@ -42,12 +42,12 @@ android {
         }
     }
 
-//    publishing {
-//        singleVariant('release') {
-//            withJavadocJar()
-//            withSourcesJar()
-//        }
-//    }
+    publishing {
+        singleVariant('release') {
+            withJavadocJar()
+            withSourcesJar()
+        }
+    }
 }
 
 publishing {
@@ -55,11 +55,11 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.github.better-bugs-sdk'
             artifactId = 'ffmpeg-wrapper'
-            version = '0.0.1'
+            version = '0.0.2'
 
-//            afterEvaluate {
-//                from components.release
-//            }
+            afterEvaluate {
+                from components.release
+            }
         }
     }
 }
